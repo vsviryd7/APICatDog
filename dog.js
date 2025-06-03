@@ -56,3 +56,14 @@ function displayDogInfo(breed) {
 
 document.getElementById('dogBtn').addEventListener('click', fetchDogImageAndInfo);
 window.onload = DogBreeds;
+//footer
+//current year
+const today = new Date();
+const thisYear = today.getFullYear();
+const footer = document.querySelector('footer')
+const copyright = document.createElement('p')
+copyright.innerHTML = `OlgaSviridenko  ©  ${thisYear}`;
+footer.appendChild(copyright);
+
+//class for css
+footer.className = 'site-footer';

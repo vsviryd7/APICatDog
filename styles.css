@@ -1,7 +1,14 @@
 * {
-	margin: 20;
-	padding: 20;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -63,3 +70,12 @@ select {
 }
 
 
+.site-footer {
+  background-color: #1b6363;
+  color: rgb(166, 236, 236);
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+  font-size: 0.9em;
+  width: 100%;
+}

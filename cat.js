@@ -42,10 +42,29 @@ async function fetchCatImageAndInfo() {
                 <h3>${breedInfo.name}</h3>
                 <p><strong>Origin Country:</strong> ${breedInfo.origin || 'N/A'}</p>
                 <p><strong>Character:</strong> ${breedInfo.temperament || 'N/A'}</p>
-            `;
+                <p><strong>Weight:</strong> ${breedInfo.weight?.metric || 'N/A'} kg</p>`;
         }
     }
 }
+// Set up footer with current year
+function setupFooter() {
+    const today = new Date();
+    const thisYear = today.getFullYear();
+    const footer = document.querySelector('footer');
 
-document.getElementById('catBtn').addEventListener('click', fetchCatImageAndInfo);
-window.onload = CatBreeds;
+    if (footer) {
+        footer.className = 'site-footer';
+        const copyright = document.createElement('p');
+        copyright.innerHTML = `OlgaSviridenko © ${thisYear}`;
+        footer.appendChild(copyright);
+    }
+}
+
+// Run everything on page load
+window.onload = function () {
+    if (document.getElementById('catBreed')) {
+        CatBreeds();
+        document.getElementById('catBtn').addEventListener('click', fetchCatImageAndInfo);
+    }
+    setupFooter();
+};
